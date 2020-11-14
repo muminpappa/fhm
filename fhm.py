@@ -4,9 +4,9 @@ import requests
 import wget
 import datetime
 
-resp = requests.get('https://www.folkhalsomyndigheten.se/'+
-    'smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/'+
-    'statistik-och-analyser/bekraftade-fall-i-sverige/')
+resp = requests.get('https://www.folkhalsomyndigheten.se/' +
+                    'smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/' +
+                    'statistik-och-analyser/bekraftade-fall-i-sverige/')
 if resp.ok:
     soup = BeautifulSoup(resp.text, 'html.parser')
     result = soup.find_all('a', {'title': 'Excel-fil'})
